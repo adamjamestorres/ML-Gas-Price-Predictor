@@ -16,7 +16,7 @@
       user = await app.logIn(credentials);
       console.dir(user);
       // load fuel_sales_prices.csv file 
-      result = await user.functions.fnc_loadCSV("https://raw.githubusercontent.com/adamjamestorres/Machine-Learning-Gas-Price-Predictor/main/data/fuel_sales_price.csv","InventoryDemo","FuelSales");
+      result = await user.functions.fnc_loadCSV("https://raw.githubusercontent.com/adamjamestorres/ML-Gas-Price-Predictor/main/data/fuel_sales_price.csv","InventoryDemo","FuelSales");
       console.dir(result);
       const mongo = app.services.mongodb("mongodb-atlas");
       const db = mongo.db("InventoryDemo");

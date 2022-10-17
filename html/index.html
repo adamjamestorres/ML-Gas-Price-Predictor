@@ -242,11 +242,6 @@
     }
   }
   async function save () {
-    //I can't get model.save to work directly with a realm function
-    //so we have to save it to local storage
-    //const saveResults = await model.save(tf.io.browserHTTPRequest('https://webhooks.mongodb-realm.com/api/client/v2.0/app/inventory-hhsot/service/saveTFModel/incoming_webhook/SaveTFModelWH'));
-    //console.log("model");
-    //console.log("model: " + JSON.stringify(model));
     console.dir(model);
     var storeId = parseFloat(document.getElementById("searchStoreId").value);
     var searchDoc = {};
@@ -323,8 +318,7 @@
   }
   async function loadModelFromDB(){
     //This is all a work around because google tensorflow model.save() and model.load() does not work with the REST API
-    //I know, right? Like really? :(
-
+    
     var modelDoc = await getJsonModel(`tensorflowjs_models/${storageID}/model`);
     
     var info = modelDoc.info_value;
